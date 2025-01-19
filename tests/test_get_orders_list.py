@@ -7,7 +7,6 @@ from utils.data_generator import Orders
 @pytest.mark.usefixtures("setup_and_teardown")
 @allure.suite("получение списка заказов")
 class TestCreateorders:
-    @allure.suite("получение списка")
 
     def test_get_order_list(self, setup_and_teardown):
 

@@ -9,7 +9,7 @@ import json
 
 def pytest_sessionstart(session):
     # Директория для allure-results
-    results_dir = "allure_results"
+    results_dir = "allure-results"
     os.makedirs(results_dir, exist_ok=True)
 
     # 1. Генерация environment.properties
@@ -50,6 +50,7 @@ def setup_and_teardown(request):
     request.cls.client = client  # Передаём объект APIClient в тестовый класс
     request.cls.courier_data = courier_data  # Передаём данные курьера в тестовый класс
 
+
     yield
 
     # Удаление созданного курьера после теста
@@ -59,4 +60,10 @@ def setup_and_teardown(request):
     })
     if response.status_code == 200:
         courier_id = response.json().get("id")
-        client.delete(f'/courier/{courier_id}')
+        client.delete(f'{API_ENDPOINTS["create_courier"]}/{courier_id}')
+
+
+
+
+
+

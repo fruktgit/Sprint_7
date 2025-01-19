@@ -1,7 +1,7 @@
 import requests
 from config import BASE_URL
-class APIClient:
 
+class APIClient:
 
     @staticmethod
     def post(endpoint, data=None):
@@ -14,3 +14,7 @@ class APIClient:
     @staticmethod
     def delete(endpoint, data=None):
         return requests.delete(f"{BASE_URL}{endpoint}", json=data)
+
+    @staticmethod
+    def put(endpoint, data=None):
+        return requests.put(f"{BASE_URL}{endpoint}", json=data)
