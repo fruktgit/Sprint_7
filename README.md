@@ -13,8 +13,8 @@ Sprint_7/
 
 Чтобы сгенерировать Allure-отчёт, введи в терминале PyCharm:
 
-pytest tests/ --alluredir=allure_results 
+python -m pytest --alluredir allure-results 
 
 Теперь нужно сформировать отчёт в формате веб-страницы. Напиши в терминале PyCharm:
 
-allure serve allure_results 
+allure serve allure-results 
