@@ -6,7 +6,7 @@ API_ENDPOINTS = {
     "login_courier": "/courier/login",
     "create_order": "/orders"
 }
-class Api_messages:
+class ApiMessages:
     account_name_already_exists = "Учетная запись с таким именем уже существует"
     missing_required_registration_fields = "Этот логин уже используется. Попробуйте другой."
     missing_required_login_fields = "Недостаточно данных для входа"

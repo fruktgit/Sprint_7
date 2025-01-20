@@ -1,7 +1,7 @@
 import pytest
 import allure
 from utils.data_generator import generate_courier_data
-from config import API_ENDPOINTS, Api_messages
+from config import API_ENDPOINTS, ApiMessages
 
 @pytest.mark.usefixtures("setup_and_teardown")
 @allure.suite("Логин курьера")
@@ -15,7 +15,7 @@ class TestLoginCourier:
     @allure.title("не существующий курьер не может авторизоваться")
     def test_login_incorrect_credentials(self, setup_and_teardown):
         response = self.client.post(API_ENDPOINTS["login_courier"], self.courier_data)
-        assert response.status_code == 404 and Api_messages.account_not_found in response.text
+        assert response.status_code == 404 and ApiMessages.account_not_found in response.text
 
     @allure.title("Проверить, что при отсутствии обязательных полей возвращается ошибка при авторизации.")
     @pytest.mark.parametrize("missing_field", [
@@ -35,7 +35,7 @@ class TestLoginCourier:
         response = self.client.post(API_ENDPOINTS["login_courier"], courier_data)
 
         # Проверки
-        assert Api_messages.missing_required_login_fields in response.text, "Ожидалось сообщение об ошибке"
+        assert ApiMessages.missing_required_login_fields in response.text, "Ожидалось сообщение об ошибке"
 
     @allure.title("успешный запрос возвращает id.")
     def test_login_success_response_id(self, setup_and_teardown):

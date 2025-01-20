@@ -1,7 +1,6 @@
 import pytest
 import allure
 from config import API_ENDPOINTS
-from utils.data_generator import Orders
 
 
 @pytest.mark.usefixtures("setup_and_teardown")
