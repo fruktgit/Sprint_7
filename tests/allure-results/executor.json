@@ -1,0 +1,9 @@
+{
+    "name": "Local Machine",
+    "type": "Local",
+    "url": "http://localhost",
+    "buildOrder": 1,
+    "buildName": "Local Test Run",
+    "buildUrl": null,
+    "reportUrl": null
+}
